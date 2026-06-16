@@ -85,12 +85,12 @@ public interface VeiculoRepositorio extends JpaRepository<Veiculo, Long> {
     @Query("SELECT COUNT(v) FROM Veiculo v WHERE v.status = :status")
     Long countByStatus(@Param("status") StatusVeiculo status);
 
-    @Query("SELECT AVG(v.price) FROM Veiculo v WHERE v.status = 'DISPONIVEL'")
-    BigDecimal averagePriceAvailable();
+    @Query("SELECT AVG(v.price) FROM Veiculo v WHERE v.status = :status")
+    BigDecimal averagePriceByStatus(@Param("status") StatusVeiculo status);
 
-    @Query("SELECT MIN(v.price) FROM Veiculo v WHERE v.status = 'DISPONIVEL'")
-    BigDecimal minPriceAvailable();
+    @Query("SELECT MIN(v.price) FROM Veiculo v WHERE v.status = :status")
+    BigDecimal minPriceByStatus(@Param("status") StatusVeiculo status);
 
-    @Query("SELECT MAX(v.price) FROM Veiculo v WHERE v.status = 'DISPONIVEL'")
-    BigDecimal maxPriceAvailable();
+    @Query("SELECT MAX(v.price) FROM Veiculo v WHERE v.status = :status")
+    BigDecimal maxPriceByStatus(@Param("status") StatusVeiculo status);
 }
