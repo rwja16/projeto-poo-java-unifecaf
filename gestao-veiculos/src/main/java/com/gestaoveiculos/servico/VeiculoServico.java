@@ -172,9 +172,9 @@ public class VeiculoServico {
         stats.put("vendidos", vehicleRepository.countByStatus(StatusVeiculo.VENDIDO));
         stats.put("reservados", vehicleRepository.countByStatus(StatusVeiculo.RESERVADO));
 
-        BigDecimal avg = vehicleRepository.averagePriceAvailable();
-        BigDecimal min = vehicleRepository.minPriceAvailable();
-        BigDecimal max = vehicleRepository.maxPriceAvailable();
+        BigDecimal avg = vehicleRepository.averagePriceByStatus(StatusVeiculo.DISPONIVEL);
+        BigDecimal min = vehicleRepository.minPriceByStatus(StatusVeiculo.DISPONIVEL);
+        BigDecimal max = vehicleRepository.maxPriceByStatus(StatusVeiculo.DISPONIVEL);
 
         stats.put("precoMedioDisponiveis", avg != null ? avg : BigDecimal.ZERO);
         stats.put("precoMinimoDisponiveis", min != null ? min : BigDecimal.ZERO);
