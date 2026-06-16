@@ -27,7 +27,7 @@ Esse projeto é a parte prática do trabalho de Programação Orientada a Objeto
 
 **Herança** — os repositórios herdam de `JpaRepository`, ganhando todos os métodos de CRUD prontos sem precisar reescrever.
 
-**Polimorfismo** — o `GlobalExceptionHandler` trata vários tipos de exceção de formas diferentes. O `RespostaApi<T>` é genérico e funciona com qualquer tipo de dado.
+**Polimorfismo** — o `TratadorGlobalExcecoes` trata vários tipos de exceção de formas diferentes. O `RespostaApi<T>` é genérico e funciona com qualquer tipo de dado.
 
 **Abstração** — as interfaces dos repositórios escondem como as consultas são feitas no banco. Os DTOs escondem os detalhes das entidades e mostram só o que a API precisa devolver.
 
